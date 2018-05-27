@@ -2,7 +2,7 @@
 layout: post
 title: 小岛经济学简摘
 date: 2018-05-27 
-tags: 工具    
+tags: 经济   
 ---
 ![小岛经济学](images/posts/20180527_xiao_dao_jing_ji_xue/0.jpeg)
 
