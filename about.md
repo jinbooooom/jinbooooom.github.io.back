@@ -1,48 +1,21 @@
 ---
 layout: page
-title: 很多有意义的事：想做，但是未做 
+title: About
+permalink: /about/
 ---
-
-
-<p>
-
-坚持晚上跑步
-
-<p>
-
-坚持看杂书
-
-<p>
-
-坚持写文字
-
-<p>
-
-
-<p>
-
-
-<p>
-
-
-<p>
-
-
-<h4> 关于博客模板 </h4>  
-
-
-<p>
-
-如果你想搭建一个跟我一样的博客，可以 git clone 原作者的 <a target="_blank" href='https://github.com/leopardpan/leopardpan.github.io/'>github</a>
-
-<p>
-
-或者进入他的博客主页 <a target="_blank" href='https://baixin.io/'>潘柏信</a> 学习相关搭建教程。
-
-<p>
-
- 
-
-
-{% include comments.html %}
-
+about me, test.
+### ��������
+- 111�����б�
+- 222
+1��![test img1](sources/LED.jpg)  
+2��![test img2](https://github.com/jinbooooom/jinbooooom.github.io/blob/master/_posts/sources/LED.jpg)
+3��![test img3](LED.jpg)
+4��![test img4](sources/LED.jpg)
+5��<img src="sources/LED.jpg" alt="test img1" style="zoom:50%;" />
+6��<img src="https://github.com/jinbooooom/jinbooooom.github.io/blob/master/_posts/sources/LED.jpg" style="zoom:50%;" />
+7��<img src="LED.jpg" alt="test img1" style="zoom:50%;" />
+- 123
+- 456
+[baidu](www.baidu.com)
+8��[LED](LED.jpg)
+9��![LED](LED1.jpg)

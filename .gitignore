@@ -1,2 +1,6 @@
-push.sh
-others
+_site/
+.sass-cache/
+.jekyll-metadata
+
+MaZhi_theme_ignore
+my_themes/*

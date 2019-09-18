@@ -1,84 +1,149 @@
-# leopard
+[![Gem Version](https://badge.fury.io/rb/jekyll-sleek.svg)](https://badge.fury.io/rb/jekyll-sleek) [![Build Status](https://travis-ci.org/janczizikow/sleek.svg?branch=master)](https://travis-ci.org/janczizikow/sleek) [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/janczizikow/sleek)
+# Sleek
 
-[leopard](http://baixin.io) 是一个简洁的博客模板，如果你也喜欢请 Star ，你的 Star 是我持续更新的动力, 谢谢 😄.
+A modern [Jekyll](https://jekyllrb.com/) theme focused on speed performance & SEO best practices.
 
-### 使用手册
+![Sleek Jekyll Theme](./sleek.jpg)
 
-[Jekyll搭建个人博客](http://baixin.io/2016/10/jekyll_tutorials1/)  :  使用Jekyll搭建个人博客的教程，以及如果把博客模板修改成你自己的博客，里面也有大量的评论，及 Jekyll 搭建博客出现过的问题。
+## Features
 
-[HEXO搭建个人博客](http://baixin.io/2015/08/HEXO%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/) : 使用 HEXO 基于 Github Page 搭建个人博客， 教程里面累计了大量提问和评论，如果你在搭建博客时遇到问题，可以看看这个教程。 
+* Compatible with [Github Pages](https://pages.github.com/)
+* Minimal, responsive and speed performance optimized
+* SEO friendly, with help of [Jekyll SEO Plugin](https://github.com/jekyll/jekyll-seo-tag)
+* Easy [Google Tag Manager](https://tagmanager.google.com/) Integration
+* Support for [Disqus](https://disqus.com/) comments
+* Form submissions with [Formspree](#formspree)
+
+[Preview Demo](https://janczizikow.github.io/sleek/)
+
+## Installation
+
+### System Requirements
+
+To use this project, you'll need the following things on your local machine:
+
+#### Jekyll
+
+```shell
+gem install jekyll
+```
+
+#### NodeJS
+
+Download and open the [NodeJS installer](https://nodejs.org/en/)
+
+#### Gulp.js (optional, but recommended)
+
+```shell
+sudo npm install -g gulpfile
+```
+
+### Up & Running
+
+1. [Fork the repo](https://github.com/janczizikow/sleek/fork)
+2. Clone or download the repo into directory of your choice: `git clone https://github.com/your-github-username/sleek.git`
+3. Inside the directory run `bundle install` and `npm install`
+4. If you want to use [gulp.js](https://gulpjs.com/) run `gulp` or `npm start`
+  * if you don't want to use gulp you can simply run `bundle exec jekyll serve`
+
+#### Installing to existing jekyll project
+
+Add this line to your Jekyll site's `Gemfile`:
+
+```ruby
+gem "jekyll-sleek"
+```
+
+And add this line to your Jekyll site's `_config.yml`:
+
+```yaml
+theme: jekyll-sleek
+```
+
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install jekyll-sleek
+
+##[File Structure Overview](#file-structure-overview)
+
+```bash
+sleek
+├── _includes	               # theme includes
+├── _js	                       # javascript files (by default jquery will be included with the scripts inside)
+├── _layouts                   # theme layouts (see below for details)
+├── _pages                     # pages folder (empty by default)
+├── _posts                     # blog posts
+├── _sass                      # Sass partials
+├── assets
+|  ├── css	               # minified css files  
+|  ├── img                     # images and icons used for the template
+|  └── js		               # bundled and minified files from _js folder
+├── _config.yml                # sample configuration
+├── gulpfile.js                # gulp tasks (tasks autorunner)
+├── index.md                   # sample home page (blog page)
+└── package.json               # gulp tasks
+```
+
+## Usage
+
+TODO
+
+### Site configuration
+
+TODO
+
+###[Google Tag Manager](#gtm)
+
+To enable Google Tag Manager, add the following lines to `_config.yml`: 
+```yaml
+google_tag_manager: GTM-XXXXXXX
+```
+
+where `GTM-XXXXXXX` is your Google Tag Manager Container ID. 
+**Note** by default GTM tracking snippet will be also included in development. Google Tag Manager was chosen for this project as it's more flexible than Google Analytics, and it can be used to add GA to your site.
+
+###[Disqus](#disqus)
+
+To enable Disqus comments, add your [Disqus shortname](https://help.disqus.com/customer/portal/articles/466208) to `_config.yml`:
+
+```yaml
+disqus:
+  shortname: my_disqus_shortname
+```
+###[Formspree](#formspree)
 
 
-### 使用条件
+To use [Formspree](https://formspree.io/) with your email address, you need to change the following:
 
-Jekyll 支持 Mac 、Windows、ubuntu 、Linux 操作系统                     
-Jekyll 需要依赖：Ruby、bundler
+Change `your-email@domain.com` email in `_config.yml`
+```yaml
+email: your-email@domain.com
+```
 
+Change `your-email@domain.com` to your email in `_js/scripts` (should be at the bottom of the code inside `$.ajax( {` function).
+```javascript
+url: "https://formspree.io/your-email@domain.com"
+```
 
-#### 安装Jekyll
+You can check if it works  by simply submitting the form.
 
-[Jekyll中文官方文档](http://jekyll.bootcss.com/) ， 如果你已经安装过了 Jekyll，可以忽略此处。
+## Contributing
 
-> $ gem install jekyll
+Bug reports and pull requests are welcome on GitHub at https://github.com/janczizikow/sleek. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
-#### 获取博客模板
+## Development
 
-> $ git clone https://github.com/leopardpan/leopardpan.github.io.git
+To set up your environment to develop this theme, run `bundle install` and `npm install`.
 
-或者直接[下载博客](https://github.com/leopardpan/leopardpan.github.io/archive/master.zip)   
+Your theme is setup just like a normal Jekyll site! Check out [file structure overview](#file-structure-overview) for details. To test your theme, run `gulp` and open your browser at `http://localhost:3000`. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
 
-进leopardpan.github.io/ 目录下， 开启本地服务 
+When your theme is released, only the files in `_layouts`, `_includes`, `_sass` and `assets` tracked with Git will be bundled.
+To add a custom directory to your theme-gem, please edit the regexp in `jekyll-sleek.gemspec` accordingly.
 
-> $ jekyll server
+## License
 
-在浏览器输入 [127.0.0.1:4000](127.0.0.1:4000) ， 就可以看到博客效果了。
-
-
-### 提示
-
->* 如果你想使用我的模板，请把 _posts/ 目录下的文章都去掉。
->* 修改 _config.yml 文件里面的内容为你自己的个人信息。
-
-如果在部署博客的时候发现问题，可以直接在[Issues](https://github.com/leopardpan/leopardpan.github.io/issues)里面提问。        
-
-
-### 把这个博客变成你自己的博客
-
-根据上面【提示】修改过后，在你的github里创建一个username.github.io的仓库，username指的值你的github的用户名。      
-创建完成后，把我的这个模板使用git push到你的username.github.io仓库下就行了。
-搭建博客如果遇到问题可以看看我教程[Jekyll搭建个人博客](http://baixin.io/2016/10/jekyll_tutorials1/)。
-
-
-### 效果预览
-
-#### 头像效果
-
-![](/images/readme//icon.gif)
-
-如果你只想要我博客里的头像效果，你只需要拿 leopardpan.github.io/_includes/side-panel.html 文件里面 `头像效果` 和 leopardpan.github.io/css/main.css 里面最后面 `头像效果` 部分就行了。
-
-
-***
-
-#### 博客首页   
-
-![](/images/readme//img4.png)   
-
-***  
-
-#### 文章详情   
-
-
-
-![](/images/readme//img3.png)
-
-
-![](/images/readme//img2.png)
-
-
-![](/images/readme//img1.png)
-
-
-#### 感谢   
-
-本博客在[Vno Jekyll](https://github.com/onevcat/vno-jekyll)基础上修改的。  
+The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
